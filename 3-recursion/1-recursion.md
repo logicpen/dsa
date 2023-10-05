@@ -130,3 +130,12 @@ func swap(i, j int, str *string) {
 	*str = s
 }
 ```
+* Find number of ways to travel from `(1, 1)` to `(NxM)` in `N x M` matrix. You can only travel to `N+1` or `M+1` cell.
+```go
+func matrixPath(n, m int) int {
+	if n == 1 || m == 1 {
+		return 1
+	}
+	return matrixPath(n-1, m) + matrixPath(n, m-1)
+}
+```
